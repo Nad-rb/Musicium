@@ -23,7 +23,7 @@ async execute(message,args,client) {
      //get serverqueue
      const serverQueue = message.client.queue.get(message.guild.id);
     //react with approve emoji
-    message.react("769665713124016128").catch(console.error);
+    message.react("805819470487617636").catch(console.error);
     //if the argslength is null return error
     if (!args.length)
       return attentionembed(message,`Usage: ${message.client.prefix}${module.exports.name} <Video Name>`)
@@ -40,11 +40,11 @@ async execute(message,args,client) {
     const search = args.join(" ");
     //define a temporary Loading Embed
     let temEmbed = new MessageEmbed()
-    .setAuthor("Searching...", "https://cdn.discordapp.com/emojis/757632044632375386.gif?v=1")
+    .setAuthor("Searching...", "https://cdn.discordapp.com/emojis/814492869725388820.gif?v=1")
     .setColor("#f300e5")
     //define the Result Embed
     let resultsEmbed = new MessageEmbed()
-      .setTitle("<:Playing:769665713124016128> Results for: ")
+      .setTitle(":-<:party_doraemon:811453928671674378> Results for: ")
       .setDescription(`\`${search}\``)
       .setColor("#f300e5")
       .setFooter("Response with your favorite number", client.user.displayAvatarURL() )
