@@ -44,7 +44,7 @@ module.exports = {
       //(over)write embed description
       queueEmbed.setDescription(m);
       //react with emoji
-      message.react("769665713124016128")
+      message.react("805819470487617636")
       //send embed
       message.channel.send(queueEmbed);
     });
