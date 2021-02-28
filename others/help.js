@@ -17,14 +17,14 @@ module.exports = {
     let prefix = await db.get(`prefix_${message.guild.id}`)
     if(prefix === null) prefix = PREFIX;
     //react with approve emoji
-    message.react("769665713124016128");
+    message.react("805819470487617636");
     //define the commands as a command
     let commands = message.client.commands.array();
     //define the help embed
     let helpEmbed = new MessageEmbed()
       .setTitle("Musicium Help")
       .setDescription(`**Version:** \`v2.8\` \n**PREFIX:** \`${PREFIX}\``)
-      .setFooter( client.user.username +`Type: ${prefix}help <Command>  for more information!`, "https://cdn.discordapp.com/avatars/769642999227351070/f1b78891507308fb76c0a66b56f4bcd6.webp")
+      .setFooter( client.user.username +`Type: ${prefix}help <Command>  for more information!`, "https://cdn.discordapp.com/attachments/805764806224510977/815565682347212830/PicsArt_02-28-08.46.34.jpg")
       .setColor("#c219d8");
     //define argstrue to negative
     let ifargstruedothis = -1;
