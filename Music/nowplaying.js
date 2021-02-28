@@ -19,7 +19,7 @@ execute(message) {
     //if not in a guild return
     if(!message.guild) return;
     //react with approve emoji
-    message.react("769665713124016128")
+    message.react("805819470487617636")
     //get Server Queue
     const queue = message.client.queue.get(message.guild.id);
     //if nothing playing error
@@ -32,7 +32,7 @@ execute(message) {
     let ms = (Number(minutes)*60+Number(seconds));
     //get thumbnail
     let thumb;
-    if (song.thumbnail === undefined) thumb = "https://cdn.discordapp.com/attachments/748095614017077318/769672148524335114/unknown.png";
+    if (song.thumbnail === undefined) thumb = "https://cdn.discordapp.com/attachments/805767053360627754/815544382571937802/Screenshot_2021-02-28-19-20-36-25.jpg";
     else thumb = song.thumbnail.url;
     //define current time
     const seek = (queue.connection.dispatcher.streamTime - queue.connection.dispatcher.pausedTime) / 1000;
@@ -40,7 +40,7 @@ execute(message) {
     const left = ms - seek;
     //define embed
     let nowPlaying = new MessageEmbed()
-      .setTitle("<:Playing:769665713124016128> Now playing")
+      .setTitle("<:party_doraemon:811453928671674378> Now playing")
       .setDescription(`[**${song.title}**](${song.url})`)
       .setThumbnail(song.thumbnail.url)
       .setColor("#c219d8")
