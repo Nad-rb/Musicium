@@ -27,7 +27,7 @@ module.exports = {
       message.client.queue.delete(message.guild.id);
       //define the embed
       const endembed = new MessageEmbed().setColor("#c219d8")
-        .setAuthor(`Music Queue ended.`, "https://cdn.discordapp.com/emojis/769915194066862080.png")
+        .setAuthor(`Music Queue ended.`, "https://cdn.discordapp.com/emojis/815575060759707668.png?v=1")
       //set the embed
       return queue.textChannel.send(endembed).catch(console.error);
     }
@@ -156,12 +156,12 @@ module.exports = {
     }
 
   let thumb;
-    if (song.thumbnail === undefined) thumb = "https://cdn.discordapp.com/attachments/748095614017077318/769672148524335114/unknown.png";
+    if (song.thumbnail === undefined) thumb = "https://cdn.discordapp.com/attachments/805767053360627754/815544382571937802/Screenshot_2021-02-28-19-20-36-25.jpg";
     else thumb = song.thumbnail.url;
 
     try {
       const newsong = new MessageEmbed()
-        .setTitle("<:Playing:769665713124016128>  "+song.title)
+        .setTitle("<:play:815575199293767690> "+song.title)
         .setURL(song.url)
         .setColor("#c219d8")
         .setThumbnail(thumb)
@@ -171,13 +171,13 @@ module.exports = {
       var playingMessage = await queue.textChannel.send(newsong);
 
 
-      await playingMessage.react("769915194444480542"); //skip
-      await playingMessage.react("769912238236106793"); //pause
-      await playingMessage.react("769913064194834511"); //loop
-      await playingMessage.react("769915194066862080"); //stop
-      await playingMessage.react("769940554481532938"); //np
-      await playingMessage.react("769945882120028160"); //queue
-      await playingMessage.react("769938447279456296"); //lyrics
+      await playingMessage.react("815575084839862314"); //skip
+      await playingMessage.react("815575032612126730"); //pause
+      await playingMessage.react("815576780861210665"); //loop
+      await playingMessage.react("815575060759707668"); //stop
+      await playingMessage.react("815575901068591105"); //np
+      await playingMessage.react("815577678836006933"); //queue
+      await playingMessage.react("815577947813576744"); //lyrics
     } catch (error) {
       console.error(error);
     }
@@ -198,7 +198,7 @@ module.exports = {
       if (member.voice.channel !== member.guild.me.voice.channel) {
 
         member.send(new MessageEmbed()
-        .setTitle("<:no:770326304473350145> | You must be in the Same Voice Channel as me!")
+        .setTitle("<:no:805772787536625714> | You must be in the Same Voice Channel as me!")
         .setColor("#ff0e7a"))
         
         reaction.users.remove(user).catch(console.error);
@@ -210,7 +210,7 @@ module.exports = {
       
       switch (reaction.emoji.id) {
         //queue
-        case "769945882120028160":
+        case "815577678836006933":
           reaction.users.remove(user).catch(console.error);
           const description = queue.songs.map((song, index) => `${index + 1}. ${escapeMarkdown(song.title)}`);
 
@@ -235,7 +235,7 @@ module.exports = {
           });
           break;
         //np
-        case "769940554481532938":
+        case "815575901068591105":
         reaction.users.remove(user).catch(console.error);
         const song = queue.songs[0];
         //get current song duration in s
@@ -244,7 +244,7 @@ module.exports = {
         let ms = (Number(minutes)*60+Number(seconds));
         //get thumbnail
         let thumb;
-        if (song.thumbnail === undefined) thumb = "https://cdn.discordapp.com/attachments/748095614017077318/769672148524335114/unknown.png";
+        if (song.thumbnail === undefined) thumb = "https://cdn.discordapp.com/attachments/805767053360627754/815544382571937802/Screenshot_2021-02-28-19-20-36-25.jpg";
         else thumb = song.thumbnail.url;
         //define current time
         const seek = (queue.connection.dispatcher.streamTime - queue.connection.dispatcher.pausedTime) / 1000;
@@ -272,25 +272,25 @@ module.exports = {
 
         break;
         //skip
-        case "769915194444480542":
+        case "815575084839862314":
           queue.playing = true;
           reaction.users.remove(user).catch(console.error);
           if (!canModifyQueue(member)) return;
           queue.connection.dispatcher.end();
-          const skipembed = new MessageEmbed().setColor("#c219d8").setAuthor(`${user.username} skipped the song.`, "https://cdn.discordapp.com/attachments/748633941912584333/753201474691137647/next.png")
+          const skipembed = new MessageEmbed().setColor("#c219d8").setAuthor(`${user.username} skipped the song.`, "https://cdn.discordapp.com/emojis/815575084839862314.png?v=1")
           queue.textChannel.send(skipembed).catch(console.error);
 
           collector.stop();
 
           break;
         //lyrics
-        case "769938447279456296":
+        case "815577947813576744":
 
           reaction.users.remove(user).catch(console.error);
           if (!canModifyQueue(member)) return;
           let lyrics = null;
           let temEmbed = new MessageEmbed()
-          .setAuthor("Searching...", "https://cdn.discordapp.com/emojis/757632044632375386.gif?v=1").setFooter("Lyrics")
+          .setAuthor("Searching...", "https://cdn.discordapp.com/emojis/815577947813576744.png?v=1").setFooter("Lyrics")
           .setColor("#c219d8")
           let result = await message.channel.send(temEmbed)
           try {
@@ -301,7 +301,7 @@ module.exports = {
           }
 
           let lyricsEmbed = new MessageEmbed()
-            .setTitle("<:lyrics:769938447279456296> Lyrics")
+            .setTitle("<:lyrics:815577947813576744> Lyrics")
             .setDescription(lyrics)
             .setColor("#c219d8")
 
@@ -313,7 +313,7 @@ module.exports = {
 
           break;
           //pause
-        case "769912238236106793":
+        case "815575032612126730":
           reaction.users.remove(user).catch(console.error);
           if (!canModifyQueue(member)) return;
           if (queue.playing) {
@@ -331,7 +331,7 @@ module.exports = {
           }
           break;
           //loop
-        case "769913064194834511":
+        case "815576780861210665":
           reaction.users.remove(user).catch(console.error);
           if (!canModifyQueue(member)) return;
           queue.loop = !queue.loop;
@@ -340,7 +340,7 @@ module.exports = {
           queue.textChannel.send(loopembed).catch(console.error);
           break;
           //stop
-        case "769915194066862080":
+        case "815575060759707668":
           reaction.users.remove(user).catch(console.error);
           if (!canModifyQueue(member)) return;
           queue.songs = [];
