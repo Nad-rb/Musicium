@@ -31,10 +31,10 @@ execute(message, args) {
     //get the song
     const song = queue.songs.splice(args[0], 1);
     //react with approve
-    message.react("769665713124016128")
+    message.react("805819470487617636")
     //send approve
     queue.textChannel.send(new MessageEmbed()
-    .setDescription(`<:no:770326304473350145> | ${message.author} removed **${song[0].title}** from the Queue`)
+    .setDescription(`<:no:805772787536625714> | ${message.author} removed **${song[0].title}** from the Queue`)
     .setColor("#c219d8")
     );
   }
