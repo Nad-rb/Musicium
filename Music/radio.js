@@ -72,14 +72,14 @@
 
     //define the No args Embed, lmao
     let resultsEmbed = new Discord.MessageEmbed()
-        .setTitle(`**<:Playing:769665713124016128> Available Radio Stations**`)//
+        .setTitle(`**<:party_doraemon:811453928671674378> Available Radio Stations**`)//
         .addFields(
-          { name: `***<:RADIO:770266575839952936> Standard Radio***`, value: `**1:  ** [\`${Radiostations[1-1].split(" ")[0]}\`](${Radiostations[1-1].split(" ")[1]})
+          { name: `***<:party_doraemon:811453928671674378> Standard Radio***`, value: `**1:  ** [\`${Radiostations[1-1].split(" ")[0]}\`](${Radiostations[1-1].split(" ")[1]})
           **2:  ** [\`${Radiostations[2-1].split(" ")[0]}\`](${Radiostations[2-1].split(" ")[1]})
           **3:  ** [\`${Radiostations[3-1].split(" ")[0]}\`](${Radiostations[3-1].split(" ")[1]})
           **4:  ** [\`${Radiostations[4-1].split(" ")[0]}\`](${Radiostations[4-1].split(" ")[1]})
           **5:  ** [\`${Radiostations[5-1].split(" ")[0]}\`](${Radiostations[5-1].split(" ")[1]})
-          ` , inline: true}, { name: `***<:RADIO:770266575839952936> Standard Radio***`, value: `**6:  ** [\`${Radiostations[6-1].split(" ")[0]}\`](${Radiostations[6-1].split(" ")[1]})
+          ` , inline: true}, { name: `***<:party_doraemon:811453928671674378> Standard Radio***`, value: `**6:  ** [\`${Radiostations[6-1].split(" ")[0]}\`](${Radiostations[6-1].split(" ")[1]})
           **7:  ** [\`${Radiostations[7-1].split(" ")[0]}\`](${Radiostations[7-1].split(" ")[1]})
           **8:  ** [\`${Radiostations[8-1].split(" ")[0]}\`](${Radiostations[8-1].split(" ")[1]})
           **9:  ** [\`${Radiostations[9-1].split(" ")[0]}\`](${Radiostations[9-1].split(" ")[1]})
@@ -187,7 +187,7 @@
   const song = {
     title: args2[0],
     url: args2[1],
-    thumbnail: "https://cdn.discordapp.com/attachments/748095614017077318/769672148524335114/unknown.png",
+    thumbnail: "https://cdn.discordapp.com/attachments/805767053360627754/815544382571937802/Screenshot_2021-02-28-19-20-36-25.jpg",
     duration: 10000,
   };
   let a, b;
@@ -219,7 +219,7 @@
   .setFooter(`${message.author.username}#${message.author.discriminator}`));
   //send Search something embed
   message.channel.send(new MessageEmbed().setColor("#c219d8")
-  .setDescription(`**<:youtube:769675858431705109> Searching 🔍 \`${Radiostations[i-1].split(" ")[0]}\`**`));
+  .setDescription(`**<:party_doraemon:811453928671674378> Searching 🔍 \`${Radiostations[i-1].split(" ")[0]}\`**`));
   //mute yourself
   await queueConstruct.connection.voice.setSelfDeaf(true);
   await queueConstruct.connection.voice.setDeaf(true);
@@ -250,7 +250,7 @@
     serverQueue.songs.push(song);
     //the new song embed
     const newsong = new MessageEmbed()
-      .setTitle("<:Playing:769665713124016128> " + song.title)
+      .setTitle("<:party_doraemon:811453928671674378> " + song.title)
       .setColor("#c219d8")
       .setThumbnail(song.thumbnail)
       .setURL(song.url)
